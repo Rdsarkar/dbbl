@@ -1,0 +1,81 @@
+<div class="container-fluid " style=" white-space: nowrap; padding-top: 1rem;">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="offset-2">Cheque Print</h3>
+      <br>
+      <form class="row form-inline">
+        <div class="col-12">
+          <div class="form-group row">
+            <div class="col-3 offset-1">
+              Pay To :
+              <input [(ngModel)]="insertPayto" type="text" class="form-control" name="payto" >
+            </div>
+
+            <div class="col-5">
+              PayDate : <input [(ngModel)]="insertPaydate" type="date" class="form-control" name="paydate">
+            </div>
+
+          </div>
+          <br>
+          <div class="form-group row">
+            <div class="col-5 offset-1">Amount : <input [(ngModel)]="amount" type="number" class="form-control" name="amount"></div>
+          </div>
+          <br>
+          <div class="form-group row">
+            <div class="col-3 offset-1">Remarks : <input  [(ngModel)]="remarks" type="text" class="form-control" name="remarks"></div>
+            <button type="button" (click)="insertButton()" type="button" class="btn btn-primary">Add</button>
+
+            <button type="button" class="btn btn-primary" style="margin-left: 2rem;">Get Data</button>
+
+            <label style="margin-left: 1rem;"> Date From :</label>
+            <input type="date" class="form-control" style="margin-left: 1rem;">
+            <label style="margin-left: 1rem;">To</label>
+            <input type="date" class="form-control" style="margin-left: 1rem;">
+          </div>
+          <br>
+          <div class="form-group offset-8">Cause of Delete <input type="text" class="form-control"
+              style="margin-left: 1rem;"></div>
+        </div>
+      </form>
+
+      <br>
+
+      <table class="table table-bordered " style="text-align: center;">
+        <thead>
+          <tr>
+            <th scope="col">Sl#</th>
+            <th scope="col">ID</th>
+            <th scope="col">Pay To</th>
+            <th scope="col">Pay Date</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Remarks</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Print</th>
+            <th scope="col">Print Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td> <button type="button" class="btn btn-primary">Confirm</button> </td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="text-align: center;"> <button class="btn btn-primary">Submit</button></div>
+
+    </div>
+  </div>
+</div>
+
+<!-- <div class="content-body" style="margin: 20px;">
+
+</div> -->
