@@ -24,8 +24,8 @@ export class PrintcqComponent implements OnInit {
   }
 
   insertButton(){
-    let x: Res = new Res();
-    
+    let x: Input1Model = new Input1Model();
+
   }
 
   // x.payto = this.insertPayto ?? "";
