@@ -15,8 +15,20 @@ export class PrintcqService {
   constructor(private httpClient: HttpClient) {
   }
 
-  baseUrl: string = 'https://localhost:3000/';
+  baseUrl: string = 'http://localhost:3000/';
+  ShowKori(x: Input1Model){
+    
+  }
+
   CreateKori(x: Input1Model) {
     return this.httpClient.post<Res>(this.baseUrl + "c", x, headerOption);
+  }
+
+  GetByDateRange(date_from: string = "", date_to: string = "") {
+    let requestBody = {
+      payDateFrom: date_from,
+      payDateTo: date_to
+    }
+    return this.httpClient.post<any[]>(this.baseUrl + "GetFreshChequeByDateRange", requestBody, headerOption);
   }
 }

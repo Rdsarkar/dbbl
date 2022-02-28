@@ -18,19 +18,22 @@
           </div>
           <br>
           <div class="form-group row">
-            <div class="col-5 offset-1">Amount : <input [(ngModel)]="amount" type="number" class="form-control" name="amount"></div>
+            <div class="col-5 offset-1">Amount : <input [(ngModel)]="insertamount" type="number" class="form-control" name="amount"></div>
           </div>
           <br>
           <div class="form-group row">
-            <div class="col-3 offset-1">Remarks : <input  [(ngModel)]="remarks" type="text" class="form-control" name="remarks"></div>
+            <div class="col-3 offset-1">Remarks : <input  [(ngModel)]="insertremarks" type="text" class="form-control" name="remarks"></div>
             <button type="button" (click)="insertButton()" type="button" class="btn btn-primary">Add</button>
 
-            <button type="button" class="btn btn-primary" style="margin-left: 2rem;">Get Data</button>
+            <button type="button" class="btn btn-primary" style="margin-left: 2rem;" (click)="onGetDataButtonClick()">Get Data</button>
 
+            <label style="margin-left: 1rem;"> Date range :</label>
+            <input [(ngModel)]="isDateRangeEnabled" name="isDateRangeDisabled" type="checkbox" class="form-control" style="margin-left: 1rem;">
             <label style="margin-left: 1rem;"> Date From :</label>
-            <input type="date" class="form-control" style="margin-left: 1rem;">
+            <input [(ngModel)]="dateFrom" name="dateFrom" type="date" class="form-control" style="margin-left: 1rem;">
             <label style="margin-left: 1rem;">To</label>
-            <input type="date" class="form-control" style="margin-left: 1rem;">
+            <input [(ngModel)]="dateTo" name="dateTo" type="date" class="form-control" style="margin-left: 1rem;">
+
           </div>
           <br>
           <div class="form-group offset-8">Cause of Delete <input type="text" class="form-control"
@@ -45,10 +48,10 @@
           <tr>
             <th scope="col">Sl#</th>
             <th scope="col">ID</th>
-            <th scope="col">Pay To</th>
+            <th scope="col" style="text-align: left;">Pay To</th>
             <th scope="col">Pay Date</th>
-            <th scope="col">Amount</th>
-            <th scope="col">Remarks</th>
+            <th scope="col" style="text-align: right;">Amount</th>
+            <th scope="col" style="text-align: left;">Remarks</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
             <th scope="col">Print</th>
@@ -56,13 +59,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td scope="row"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+          <tr *ngFor="let item of displayList, index as i">
+            <td scope="row">{{i+1}}</td>
+            <td>{{item?.id}}</td>
+            <td style="text-align: left;">{{item?.pay_to}}</td>
+            <td >{{getFormattedDate(item?.pay_date)}}</td>
+            <td style="text-align: right;">{{getFormattedNumber(item?.amount)}}</td>
+            <td style="text-align: left;">{{item?.remarks}}</td>
             <td></td>
             <td></td>
             <td></td>
