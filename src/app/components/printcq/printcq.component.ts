@@ -22,6 +22,8 @@ export class PrintcqComponent implements OnInit {
   dateFrom: string = [new Date().getFullYear(), ('0' + (new Date().getMonth() + 1)).slice(-2), ('0' + new Date().getDate()).slice(-2)].join('-');
   dateTo: string = [new Date().getFullYear(), ('0' + (new Date().getMonth() + 1)).slice(-2), ('0' + new Date().getDate()).slice(-2)].join('-');
 
+  loadPaydate: string = [new Date().getFullYear(), ('0' + (new Date().getMonth() + 1)).slice(-2), ('0' + new Date().getDate()).slice(-2)].join('-');
+
   isDateRangeEnabled: boolean = true;
   displayList: any[] = []
 
