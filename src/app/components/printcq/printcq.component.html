@@ -65,15 +65,15 @@
             <td style="text-align: left;">{{item?.pay_to}}</td>
             <td >{{getFormattedDate(item?.pay_date)}}</td>
             <td style="text-align: right;">{{getFormattedNumber(item?.amount)}}</td>
-            <td style="text-align: left;">{{item?.remarks}}</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td style="text-align: left; white-space: normal" >{{item?.remarks}}</td>
+            <td><button type="button" class="btn btn-warning">Edit</button> </td>
+            <td><button type="button" class="btn btn-danger">Delete</button></td>
+            <td><button type="button" class="btn btn-info">Print</button></td>
             <td> <button type="button" class="btn btn-primary">Confirm</button> </td>
           </tr>
         </tbody>
       </table>
-      <div style="text-align: center;"> <button class="btn btn-primary">Submit</button></div>
+      <div style="text-align: center;"> <button class="btn btn-success">Submit</button></div>
 
     </div>
   </div>
